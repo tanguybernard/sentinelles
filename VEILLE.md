@@ -94,6 +94,21 @@ J    o   o   o   o   o   o        ┘
 - `analogWrite(broche, valeur)`, avec une valeur de **0 à 255** : la broche s'allume et s'éteint très vite. L'œil voit une LED **moins forte**. C'est le **PWM**.
 - Autre solution, côté matériel : une résistance plus forte.
 
+## 9. Toggle : mémoire, front et anti-rebond (exp. 03)
+
+### Mémoriser un état
+- En exp. 02, la LED **recopiait** le bouton à chaque instant. Pour un toggle, le programme doit **se souvenir** de l'état de la LED : c'est le rôle d'une variable (`bool ledAllumee`).
+- `ledAllumee = !ledAllumee;` : le `!` veut dire « l'inverse de ».
+
+### Détecter un front
+- On ne réagit pas **tant que** le bouton est appuyé (la LED clignoterait des centaines de fois par seconde). On réagit au **moment** où il passe de relâché à appuyé (HIGH → LOW).
+- Ce passage s'appelle un **front**. On compare la lecture actuelle à la précédente.
+
+### Les rebonds et l'anti-rebond
+- Un bouton mécanique ne fait pas un contact net : pendant quelques millisecondes, il **rebondit** (contact, pas contact, contact…). L'ESP32 lit des milliers de fois par seconde, donc un seul appui peut ressembler à plusieurs appuis.
+- Solution logicielle : on ne croit le bouton que s'il est **resté stable pendant 50 ms** (`ANTI_REBOND_MS`). Trop court, les rebonds passent ; trop long, le bouton paraît lent.
+- **Constaté en vrai** : sur 12 appuis, un appui propre fait 2 changements bruts (enfoncé puis relâché), mais 2 appuis en ont fait 4. Ce sont des rebonds, filtrés par le code.
+
 ---
 
 ## Expérience 02 — câblage final (validé)
@@ -126,6 +141,6 @@ Réflexe de débogage : **ouvrir le moniteur série** (`pio device monitor`) pou
 
 ---
 
-## À venir
+## Expérience 03 — toggle (validée)
 
-- **Expérience 03 — toggle** : un appui allume, l'appui suivant éteint. Même câblage, seul le code change. Notion nouvelle : l'**anti-rebond** (un seul appui peut être compté plusieurs fois si on ne le gère pas).
+Même câblage que l'exp. 02 : seul le code change. Voir la section 9 pour les notions.

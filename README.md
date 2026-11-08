@@ -6,6 +6,7 @@ Projets d'initiation et d'expérimentation ESP32. **Un dossier = une expérience
 sentinelles/
 ├── 01-blink-serial/        ✅ fait — LED onboard + port série (test matériel complet)
 ├── 02-bouton-led-externe/  ✅ fait — bouton poussoir + LED externe sur breadboard (entrées)
+├── 03-toggle-led/          ✅ fait — un appui allume, le suivant éteint (mémoire + anti-rebond)
 └── ...                     🔜 à venir : arrosage-plante (sonde d'humidité + relais)
 ```
 
