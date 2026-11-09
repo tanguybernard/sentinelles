@@ -10,6 +10,10 @@ sentinelles/
 └── ...                     🔜 à venir : arrosage-plante (sonde d'humidité + relais)
 ```
 
+## Idées pour plus tard
+
+- **Lampe de bureau moulin à vent** — [vidéo](https://www.youtube.com/watch?v=NdYTs1NasPw). Pistes ESP32 : LED dont on règle l'intensité (PWM, vu en 02), bouton marche/arrêt (vu en 03), pales qui tournent avec un petit moteur (notion nouvelle : un moteur ne se branche pas directement sur une broche, il faut un transistor ou un driver).
+
 ## Comment travailler sur une expérience
 
 Se placer **dans son dossier**, puis :
