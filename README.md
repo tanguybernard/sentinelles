@@ -12,7 +12,7 @@ sentinelles/
 
 ## Idées pour plus tard
 
-- **Lampe de bureau moulin à vent** — [vidéo](https://www.youtube.com/watch?v=NdYTs1NasPw). Pistes ESP32 : LED dont on règle l'intensité (PWM, vu en 02), bouton marche/arrêt (vu en 03), pales qui tournent avec un petit moteur (notion nouvelle : un moteur ne se branche pas directement sur une broche, il faut un transistor ou un driver).
+- **Lampe de bureau moulin à vent** — [vidéo](https://www.youtube.com/watch?v=NdYTs1NasPw), [guide et liste de matériel](https://www.huyvector.org/decor-lamps/windmill-desk-lamp). Sculpture en fil de cuivre et tube laiton soudés. Le montage d'origine n'a pas de microcontrôleur : batterie + module de charge USB-C + variateur de vitesse + moteur à réducteur 3 V 30 tr/min + ampoule LED Edison 39 mm. Pistes ESP32 : remplacer le variateur par du PWM (vu en 02) à travers un transistor, bouton marche/arrêt (vu en 03).
 
 ## Comment travailler sur une expérience
 
